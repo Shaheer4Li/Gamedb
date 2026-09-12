@@ -1,0 +1,36 @@
+{%extends "base.html"%}
+{% block content %}
+<div class="holder">
+    <div class="total hover">
+        Total Games : {{total}}
+    </div>
+    <div class="mar">
+        <div class="node hover" style="color: rgb(97, 238, 160);">Completed <br> {{completed}}</div>
+        <div class="node hover" style="color: rgb(234, 236, 98);">Playing <br> {{play}}</div>
+        <div class="node hover" style="color: rgb(238, 72, 72);">Starting <br> {{start}}</div>
+    </div>
+<div class="ot">
+  <div class="r  hover">
+    <h2>Games by Genre</h2>
+    {% for genre, count in gernres %}
+    <div class="bar-row">
+      <span>{{ genre }}</span>
+      <div class="bar-track" style="width: {{ count }}%;"></div>
+      <span>{{ count }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="r hover">
+    <h2>Games by Platform</h2>
+    {% for platform, count in platform %}
+    <div class="bar-row">
+      <span>{{ platform }}</span>
+      <div class="bar-track" style="width: {{ count }}%;"></div>
+      <span>{{ count }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+{% endblock %}

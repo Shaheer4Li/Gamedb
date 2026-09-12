@@ -1,0 +1,19 @@
+{%extends "base.html"%}
+{% block content %}
+<div class="container">
+    {% for game in gama%}
+    <div class="card  hover">
+        <img src="{{game.cover}}" alt="Description of the image for accessibility"
+            onerror="this.onerror=null; this.src='../static/link.jpg'">
+        <div class="l">
+            <h1>{{game.title}}</h1>
+            <a href="{{ url_for('game_details', game_id=game.id) }}">
+                View Details
+            </a>
+            <p>{{game.description}}</p>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

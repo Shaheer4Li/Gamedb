@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="..\static\style.css">
+</head>
+
+<body>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="flash">
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+    <div class="navigate">
+        <a href="{{ url_for('home') }}" class="logo">
+            <div>
+                GameDB
+            </div>
+        </a>
+        <ul class="naa">
+            <li class="nav_item hover"><a href="{{url_for('add')}}">Add Game</a> </li>
+            <li class="nav_item hover"><a href="{{url_for('collection')}}">Collection</a></li>
+            <li class="nav_item hover"><a href="{{url_for('staic')}}">stats</a></li>
+            
+        </ul>
+    </div>
+    <script>
+  setTimeout(function() {
+    var flashElement = document.querySelector('.flash');
+    if (flashElement) {
+      flashElement.style.display = 'none';
+    }
+  }, 3000);
+</script>
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>

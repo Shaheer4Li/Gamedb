@@ -1,0 +1,36 @@
+
+{%extends "base.html"%}
+{% block content %}
+<form method="POST" class="add">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.Title.label }}
+        {{ form.Title(class_="sting") }}
+    </div>
+    <div>
+        {{ form.genre.label }}
+        {{ form.genre(class_="selekt") }}
+    </div>
+    <div>
+        {{ form.platform.label }}
+        {{ form.platform(class_="selekt") }}
+    </div>
+    <div>
+        {{ form.status.label }}
+        {{ form.status(class_="selekt") }}
+    </div>
+    <div>
+        {{ form.cover.label }}
+        {{ form.cover(class_="sting") }}
+    </div>
+    <div>
+        {{ form.description.label }}
+        {{ form.description(class_="selekt") }}
+    </div>
+    <div>
+        {{form.submit(class_="btn small")}}
+    </div>
+</form>
+
+</form>
+{% endblock %}
